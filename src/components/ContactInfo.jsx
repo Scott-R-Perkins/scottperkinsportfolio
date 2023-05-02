@@ -77,16 +77,8 @@ const ContactMe = () => {
         </VStack>
 
         {/* Contact Form */}
-        <VStack
-          as="form"
-          onSubmit={handleSubmit}
-          spacing={4}
-          w="100%"
-          flex="1"
-          ref={formRef}
-          mt={{ base: 8, md: 0 }}
-        >
-          <Heading mb={4}>Get in Touch</Heading>
+        <VStack as="form" onSubmit={handleSubmit} spacing={4} w="100%" flex="1" ref={formRef} mt={{ base: 8, md: 0 }}>
+          <Heading mb={4}>Get in touch with me</Heading>
           <FormControl id="name">
             <FormLabel>Name</FormLabel>
             <Input type="text" name="name" />

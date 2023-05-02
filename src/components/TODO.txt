@@ -1,5 +1,4 @@
 Check all pages 
-Fix Routing for projects (try and make it so the whole card isnt a link)
 Connect the contact form to either a discord webhook or maybe email
 Fix up the fromatting to make it consistent
 Find more images (Random stock type shit for about? maybe ICL logo for task management, and pic from game for DemonBreach)

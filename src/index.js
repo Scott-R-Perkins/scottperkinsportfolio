@@ -4,56 +4,17 @@ import * as ReactDOM from 'react-dom/client';
 import reportWebVitals from './reportWebVitals';
 import * as serviceWorker from './serviceWorker';
 import Root from './components/Root';
-import About from './components/About';
-import Error from './components/Error';
-import Home from './components/Home';
-import Projects from './components/Projects';
-import Contact from './components/ContactInfo';
-import ICLTaskManagement from './components/projects/ICLTaskManagement'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-
+import { BrowserRouter as Router } from 'react-router-dom';
 
 const container = document.getElementById('root');
 const root = ReactDOM.createRoot(container);
 
-const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <Root />,
-    errorElement: <Error />,
-    children: [
-      {
-        path: 'home',
-        element: <Home />
-      },
-      {
-        path: 'about',
-        element: <About />
-      },
-      {
-        path: 'projects',
-        element: <Projects />,
-        children: [
-          {
-            path: 'icltaskmanagement',
-            element: <ICLTaskManagement />
-          },
-          // Add other project components here as needed
-        ],
-      },
-      {
-        path: 'contact',
-        element: <Contact />
-      },
-    ],
-  },
-]);
-
-
 root.render(
   <StrictMode>
     <ChakraProvider>
-      <RouterProvider router={router} />
+      <Router>
+        <Root/>
+      </Router>
     </ChakraProvider>
   </StrictMode>
 );

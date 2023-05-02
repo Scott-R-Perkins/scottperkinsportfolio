@@ -1,15 +1,6 @@
 import React from 'react';
 import {
-  Box,
-  Grid,
-  GridItem,
-  Heading,
-  Text,
-  Image,
-  Button,
-  useBreakpointValue,
-  Flex,
-  useColorModeValue
+  Box, Grid, GridItem, Heading, Text, Image, Button, useBreakpointValue, Flex, useColorModeValue
 } from '@chakra-ui/react';
 import PageTransition from './PageTransition';
 import { Link } from 'react-router-dom';
@@ -36,18 +27,17 @@ const ProjectCard = ({ title, description, imageUrl, projectUrl }) => {
             </Heading>
             <Text mb={4} minHeight="3.5em">{description}</Text>
           </Box>
-          <Button
-            as="a"
-            href={projectUrl}
-            colorScheme="teal"
-            maxWidth="80%"
-          >
-            View Project
-          </Button>
+          <Link to={projectUrl}>
+            <Button
+              colorScheme="teal"
+              maxWidth="80%"
+            >
+              View Project
+            </Button>
+          </Link>
         </Flex>
       </Box>
     </PageTransition>
-
   );
 };
 
@@ -59,13 +49,13 @@ const Projects = () => {
       title: '(WIP) Task management application',
       description: 'Task management mobile application for ICL mall staff.',
       imageUrl: 'https://via.placeholder.com/300',
-      projectUrl: '/projects/icl-task-management',
+      projectUrl: '/projects/icltaskmanagement',
     },
     {
       title: 'Demon Breach',
       description: 'Top down twinstick shooter game developed for my second year game development paper.',
       imageUrl: 'https://via.placeholder.com/300',
-      projectUrl: '/project-2',
+      projectUrl: '/projects/demonbreach',
     },
     // Add more projects here
   ];
@@ -85,14 +75,13 @@ const Projects = () => {
       >
         {projects.map((project, index) => (
           <GridItem key={index}>
-            <Link to={project.projectUrl}>
-              <ProjectCard {...project} />
-            </Link>
+            <ProjectCard {...project} />
           </GridItem>
         ))}
+
       </Grid>
     </Box>
   );
-  };
-  
-  export default Projects;
+};
+
+export default Projects;
