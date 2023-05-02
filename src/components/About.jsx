@@ -22,7 +22,7 @@ const AboutMe = () => {
               </Heading>
               <Text color={textColor}>
                 Hi, I'm Scott Perkins, a Bachelor of Information Technology
-                student currently in my 3rd year at Te Pūkenga, Invercargill. I
+                student currently in my 3rd year at Te-Pūkenga, Invercargill. I
                 have a passion for creating beautiful, responsive, and functional
                 web applications, With experience in various programming
                 languages and frameworks. <br></br><br></br>
