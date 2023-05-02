@@ -49,7 +49,7 @@ const ContactMe = () => {
       return;
     }
 
-    // Handle the form submission here
+    // Handle the form submission here, probably just send to a discord webhook for now, or maybe look into sending it to one my old emails?
 
     // Clear the input fields and display a success notification
     formRef.current.reset();
@@ -71,8 +71,9 @@ const ContactMe = () => {
         {/* Contact Details */}
         <VStack alignItems="start" flex="1">
           <Heading mb={4}>Contact Details</Heading>
-          <Text>Email: your.email@example.com</Text>
-          <Text>Phone: +1 (123) 456-7890</Text>
+          <Text>Email: scottrperkins@gmail.com</Text>
+          <Text>Email: 2013004474@student.sit.ac.nz</Text>
+          <Text>Phone: +64 27 869 0389</Text>
         </VStack>
 
         {/* Contact Form */}

@@ -63,7 +63,7 @@ const Projects = () => {
     },
     {
       title: 'Demon Breach',
-      description: 'Top down twinstick shooter game.',
+      description: 'Top down twinstick shooter game developed for my second year game development paper.',
       imageUrl: 'https://via.placeholder.com/300',
       projectUrl: '/project-2',
     },

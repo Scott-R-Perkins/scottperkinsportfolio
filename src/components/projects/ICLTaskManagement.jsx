@@ -13,13 +13,12 @@ const ICLTaskManagement = () => {
             my={{ base: '2rem', md: '4rem' }}
             p={{ base: '2rem', md: '4rem' }}
             borderRadius="md"
-            bgColor={bgColor}
-        >
+            bgColor={bgColor}>
             <Heading as="h1" size="2xl" mb={4} color={textColor}>
-                Project Title
+                ICL Task Management application
             </Heading>
             <Heading as="h2" size="md" mb={2} color={textColor}>
-                Project Subtitle
+                Mobile task management application for mall staff
             </Heading>
             <Image
                 src="https://via.placeholder.com/500"
@@ -28,12 +27,8 @@ const ICLTaskManagement = () => {
                 borderRadius="md"
             />
             <Text fontSize="md" color={textColor}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod
-                purus vitae odio consequat, eu fermentum sapien bibendum. Mauris
-                ultricies est id semper cursus. Aliquam erat volutpat. Praesent tempus,
-                quam et convallis vestibulum, ex justo venenatis turpis, vitae commodo
-                urna odio non libero. Nullam vitae ultrices justo. Duis vel ipsum
-                auctor, luctus elit at, aliquam velit.
+                This application is a current WIP application I am building with my team as my capstone project for the year in my IT701 - Project paper.
+                The application is intended for use by the mall staff to help track the tasks they are required to do around the mall during the day, as well as time stamp when they are completing tasks for review by management.
             </Text>
             <Button colorScheme="teal" onClick={() => navigate("/projects")}>
                 Go back to Projects
