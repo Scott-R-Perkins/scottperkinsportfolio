@@ -7,7 +7,7 @@ import { useBreakpointValue } from "@chakra-ui/react";
 
 const ChakraLink = chakra(Link);
 
-const NavLink = ({ children, to }) => {
+const NavLink = ({ children, to, onClick }) => {
   const location = useLocation();
   const isActive = location.pathname === to;
   const activeColor = useColorModeValue('teal.500', 'teal.300');
@@ -16,7 +16,8 @@ const NavLink = ({ children, to }) => {
 
   return (
     <ChakraLink display={{ base: 'block', md: 'inline' }} mb={{ base: 2, md: 0 }} to={to} px={4} py={2} fontSize="lg" fontWeight={isActive ? 'semibold' : 'normal'}
-      color={isActive ? activeColor : linkColor} _hover={{textDecoration: 'underline', color: hoverColor, }}>
+      color={isActive ? activeColor : linkColor} _hover={{textDecoration: 'underline', color: hoverColor, }}
+      onClick={onClick}>
       {children}
     </ChakraLink>
   );
