@@ -33,9 +33,11 @@ const AboutMe = () => {
                 Hi, I'm Scott Perkins, a Bachelor of Information Technology
                 student currently in my 3rd year at Te Pūkenga, Invercargill. I
                 have a passion for creating beautiful, responsive, and functional
-                web applications. With experience in various programming
-                languages and frameworks, however primarily with C#, Javascript,
-                React and <i>some</i> chakra-ui. I enjoy the challenge that comes
+                web applications, With experience in various programming
+                languages and frameworks. <br></br><br></br>
+                Most of my experience is with C#, Javascript,
+                React and <i>some</i> chakra-ui, but I also have experience in other tools such as mySQL, Jade, Project management and more.<br></br><br></br>
+                 I enjoy the challenge that comes
                 with learning these technologies and the feeling that comes with
                 something finally working and looking the way I want it to.
               </Text>
