@@ -17,7 +17,7 @@ const AboutMe = () => {
           {/* About Me */}
           <Stack bg={rowBgColor1} p={4} borderRadius="md" spacing={4} w="100%" alignItems="flex-start" direction={stackDirection}>
             <VStack alignItems="start" flex="1" spacing={10}>
-              <Heading mb={4} color={headingColor}>
+              <Heading mb={1} color={headingColor}>
                 About Me
               </Heading>
               <Text color={textColor}>
@@ -40,7 +40,7 @@ const AboutMe = () => {
           {/* Skills */}
           <Stack bg={rowBgColor2} p={4} borderRadius="md" spacing={4} w="100%" alignItems="flex-start" direction={stackDirection}>
             <VStack alignItems="start" flex="1" spacing={10}>
-              <Heading mb={4} color={headingColor}>
+              <Heading mb={1} color={headingColor}>
                 Skills
               </Heading>
               <Text color={textColor}>
@@ -54,7 +54,7 @@ const AboutMe = () => {
           {/* Interests */}
           <Stack bg={rowBgColor1} p={4} borderRadius="md" spacing={4} w="100%" alignItems="flex-start" direction={stackDirection}>
             <VStack alignItems="start" flex="1" spacing={10}>
-              <Heading mb={4} color={headingColor}>
+              <Heading mb={1} color={headingColor}>
                 Interests
               </Heading>
               <Text color={textColor}>

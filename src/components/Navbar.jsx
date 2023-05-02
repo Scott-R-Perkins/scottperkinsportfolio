@@ -15,20 +15,8 @@ const NavLink = ({ children, to }) => {
   const hoverColor = useColorModeValue('teal.500', 'teal.300');
 
   return (
-    <ChakraLink
-      display={{ base: 'block', md: 'inline' }}
-      mb={{ base: 2, md: 0 }}
-      to={to}
-      px={4}
-      py={2}
-      fontSize="lg"
-      fontWeight={isActive ? 'semibold' : 'normal'}
-      color={isActive ? activeColor : linkColor}
-      _hover={{
-        textDecoration: 'underline',
-        color: hoverColor,
-      }}
-    >
+    <ChakraLink display={{ base: 'block', md: 'inline' }} mb={{ base: 2, md: 0 }} to={to} px={4} py={2} fontSize="lg" fontWeight={isActive ? 'semibold' : 'normal'}
+      color={isActive ? activeColor : linkColor} _hover={{textDecoration: 'underline', color: hoverColor, }}>
       {children}
     </ChakraLink>
   );
@@ -47,27 +35,12 @@ const Navbar = () => {
   };
 
   return (
-    <Box>
-      <Flex
-        as="header"
-        justifyContent="space-between"
-        alignItems="center"
-        px={{ base: 4, md: 8 }}
-        py={4}
-        bg={useColorModeValue('white', 'gray.800')}
-        bgColor={"black"}
-        borderBottomWidth="1px"
-        borderBottomColor={useColorModeValue('gray.200', 'gray.700')}
-      >
-        <IconButton
-          display={{ base: 'flex', md: 'none' }}
-          aria-label="Toggle menu"
-          icon={<HamburgerIcon />}
-          onClick={onOpen}
-          color={useColorModeValue("black", "white")}
-        />
-
-
+    <Box position="sticky" top="0" zIndex="10" width="100%">
+      <Flex as="header" justifyContent="space-between" alignItems="center" px={{ base: 4, md: 8 }} py={4} bg={useColorModeValue('white', 'gray.800')}
+        bgColor={"black"} borderBottomWidth="1px" borderBottomColor={useColorModeValue('gray.200', 'gray.700')}
+        
+        >
+        <IconButton display={{ base: 'flex', md: 'none' }} aria-label="Toggle menu" icon={<HamburgerIcon />} onClick={onOpen} color={useColorModeValue("black", "white")}/>
         <HStack spacing={8} display={{ base: 'none', md: 'flex' }}>
           <NavLink to="/home">Home</NavLink>
           <NavLink to="/about">About me</NavLink>

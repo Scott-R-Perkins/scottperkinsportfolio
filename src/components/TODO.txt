@@ -4,6 +4,4 @@ Fix up the fromatting to make it consistent
 Find more images (Random stock type shit for about? maybe ICL logo for task management, and pic from game for DemonBreach)
 Documentation
 Check requirements and make sure I have everything
-Figure out why root page isnt home page again and fix that
-Figure out changing the website title and maybe the logo?
 Look into having the navmenu (hamburger) auto close when a link is clicked because atm it stays open on mobile

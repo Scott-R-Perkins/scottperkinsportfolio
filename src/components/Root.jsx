@@ -23,6 +23,14 @@ const Root = () => {
       <Navbar />
       <Routes>
         <Route
+          path="/"
+          element={
+            <motion.div {...pageTransition}>
+              <Home />
+            </motion.div>
+          }
+        />
+        <Route
           path="/home"
           element={
             <motion.div {...pageTransition}>
@@ -55,13 +63,13 @@ const Root = () => {
           }
         />
         <Route
-        path="/projects/demonbreach"
-        element={
-          <motion.div {...pageTransition}>
-            <DemonBreach />
-          </motion.div>
-        }
-      />
+          path="/projects/demonbreach"
+          element={
+            <motion.div {...pageTransition}>
+              <DemonBreach />
+            </motion.div>
+          }
+        />
         {/* Add other project components here as needed */}
         <Route
           path="/contact"
