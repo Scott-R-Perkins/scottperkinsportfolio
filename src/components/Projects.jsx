@@ -52,10 +52,22 @@ const Projects = () => {
       projectUrl: '/projects/icltaskmanagement',
     },
     {
+      title: '(WIP) QR attendance scanner',
+      description: 'A mobile application designed to let users scan a QR code to log attendance to a class or event',
+      imageUrl: 'https://via.placeholder.com/300',
+      projectUrl: '/projects/qrattendance',
+    },
+    {
       title: 'Demon Breach',
       description: 'Top down twinstick shooter game developed for my second year game development paper.',
       imageUrl: 'https://via.placeholder.com/300',
       projectUrl: '/projects/demonbreach',
+    },
+    {
+      title: 'Digimon card collection app',
+      description: 'Mobile application for keeping track of owned Digimon cards for the Digimon TCG',
+      imageUrl: 'https://via.placeholder.com/300',
+      projectUrl: '/projects/digimonapp',
     },
     // Add more projects here
   ];

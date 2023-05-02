@@ -5,3 +5,5 @@ Find more images (Random stock type shit for about? maybe ICL logo for task mana
 Documentation
 Check requirements and make sure I have everything
 Look into having the navmenu (hamburger) auto close when a link is clicked because atm it stays open on mobile
+explain my roles on the projects etc 
+add project pages for the digimon collection and attendance scanner
