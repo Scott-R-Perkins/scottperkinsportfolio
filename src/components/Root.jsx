@@ -1,16 +1,18 @@
-import { Box } from "@chakra-ui/react";
+import { Box } from '@chakra-ui/react';
 import React from 'react';
-import { Outlet } from "react-router-dom";
+import { Outlet } from 'react-router-dom';
 import Navbar from './Navbar';
+import { AnimatePresence } from 'framer-motion';
 
-const Root = () =>{
-    return (
-        <Box>
-            <Navbar/>
-            {/*Put something here as an intro screen? with buttons to each other page */}
-            <Outlet/>
-        </Box>
-    )
-}
+const Root = () => {
+  return (
+    <Box>
+      <Navbar />
+      <AnimatePresence mode='wait'>
+        <Outlet />
+      </AnimatePresence>
+    </Box>
+  );
+};
 
-export default Root
+export default Root;

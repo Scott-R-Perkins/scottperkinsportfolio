@@ -8,8 +8,10 @@ import About from './components/About';
 import Error from './components/Error';
 import Home from './components/Home';
 import Projects from './components/Projects';
-import Contact from './components/contact';
+import Contact from './components/Contact';
+import ICLTaskManagement from './components/projects/ICLTaskManagement'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 
 const container = document.getElementById('root');
@@ -23,23 +25,75 @@ const router = createBrowserRouter([
     children: [
       {
         path: 'home',
-        element: <Home />
+        element: (
+          <motion.div
+            initial={{ x: 200, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            exit={{ x: -200, opacity: 0 }}
+            transition={{ duration: 2 }}
+          >
+            <Home />
+          </motion.div>
+        ),
       },
       {
         path: 'about',
-        element: <About />
+        element: (
+          <motion.div
+            initial={{ x: 200, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            exit={{ x: -200, opacity: 0 }}
+            transition={{ duration: 2 }}
+          >
+            <About />
+          </motion.div>
+        ),
       },
       {
         path: 'projects',
-        element: <Projects/>
+        element: (
+          <motion.div
+            initial={{ x: 200, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            exit={{ x: -200, opacity: 0 }}
+            transition={{ duration: 2 }}
+          >
+            <Projects />
+          </motion.div>
+        ),
+        children: [
+          {
+            path: 'icltaskmanagement',
+            element: (
+              <motion.div
+                initial={{ x: 200, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                exit={{ x: -200, opacity: 0 }}
+                transition={{ duration: 2 }}
+              >
+                <ICLTaskManagement />
+              </motion.div>
+            ),
+          },
+          // Add other project components here as needed
+        ],
       },
       {
         path: 'contact',
-        element: <Contact/>
-      }
-    ]
-  }
-])
+        element: (
+          <motion.div
+            initial={{ x: 200, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            exit={{ x: -200, opacity: 0 }}
+            transition={{ duration: 2 }}
+          >
+            <Contact />
+          </motion.div>
+        ),
+      },
+    ],
+  },
+]);
 
 
 root.render(

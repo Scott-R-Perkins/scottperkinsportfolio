@@ -2,7 +2,6 @@ import React, { useRef } from 'react';
 import {
   Box,
   VStack,
-  HStack,
   Heading,
   Text,
   FormControl,
@@ -11,7 +10,10 @@ import {
   Textarea,
   Button,
   useToast,
+  Flex,
+  useBreakpointValue,
 } from '@chakra-ui/react';
+import PageTransition from './PageTransition';
 
 const ContactMe = () => {
   const toast = useToast();
@@ -60,9 +62,12 @@ const ContactMe = () => {
     });
   };
 
+  const flexDirection = useBreakpointValue({ base: 'column', md: 'row' });
+
   return (
-    <Box p={{ base: 4, md: 8 }}>
-      <HStack spacing={8} w="100%" justifyContent="space-between">
+    <PageTransition>
+      <Box p={{ base: 4, md: 8 }}>
+      <Flex direction={flexDirection} w="100%" justifyContent="space-between">
         {/* Contact Details */}
         <VStack alignItems="start" flex="1">
           <Heading mb={4}>Contact Details</Heading>
@@ -71,7 +76,15 @@ const ContactMe = () => {
         </VStack>
 
         {/* Contact Form */}
-        <VStack as="form" onSubmit={handleSubmit} spacing={4} w="100%" flex="1" ref={formRef}>
+        <VStack
+          as="form"
+          onSubmit={handleSubmit}
+          spacing={4}
+          w="100%"
+          flex="1"
+          ref={formRef}
+          mt={{ base: 8, md: 0 }}
+        >
           <Heading mb={4}>Get in Touch</Heading>
           <FormControl id="name">
             <FormLabel>Name</FormLabel>
@@ -93,8 +106,10 @@ const ContactMe = () => {
             Send Message
           </Button>
         </VStack>
-      </HStack>
+      </Flex>
     </Box>
+    </PageTransition>
+    
   );
 };
 

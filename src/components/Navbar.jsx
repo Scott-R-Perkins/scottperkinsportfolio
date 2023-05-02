@@ -13,28 +13,37 @@ import {
   DrawerCloseButton
 } from '@chakra-ui/react';
 import { HamburgerIcon, SunIcon, MoonIcon } from '@chakra-ui/icons';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 import { chakra } from '@chakra-ui/react';
 const ChakraLink = chakra(Link);
 
+const NavLink = ({ children, to }) => {
+  const location = useLocation();
+  const isActive = location.pathname === to;
+  const activeColor = useColorModeValue('teal.500', 'teal.300');
+  const linkColor = useColorModeValue('gray.200', 'gray.200');
+  const hoverColor = useColorModeValue('teal.500', 'teal.300');
 
-
-const NavLink = ({ children, to }) => (
+  return (
     <ChakraLink
+      display={{ base: 'block', md: 'inline' }}
+      mb={{ base: 2, md: 0 }}
       to={to}
       px={4}
       py={2}
       fontSize="lg"
-      fontWeight="semibold"
-      color={useColorModeValue('gray.200', 'gray.200')}
-      _hover={{ textDecoration: 'underline' }}
+      fontWeight={isActive ? 'semibold' : 'normal'}
+      color={isActive ? activeColor : linkColor}
+      _hover={{
+        textDecoration: 'underline',
+        color: hoverColor,
+      }}
     >
       {children}
     </ChakraLink>
   );
-  
-  
+};
 
 const Navbar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -59,7 +68,9 @@ const Navbar = () => {
           aria-label="Toggle menu"
           icon={<HamburgerIcon />}
           onClick={onOpen}
+          color={useColorModeValue("black", "white")}
         />
+
 
         <HStack spacing={8} display={{ base: 'none', md: 'flex' }}>
           <NavLink to="/home">Home</NavLink>
@@ -78,13 +89,13 @@ const Navbar = () => {
       {/* Mobile view */}
       <Drawer isOpen={isOpen} placement="left" onClose={onClose}>
         <DrawerOverlay />
-        <DrawerContent>
+        <DrawerContent bg={useColorModeValue("black", "gray.800")}>
           <DrawerCloseButton mt={2} />
           <Box mt={8} px={4}>
-            <NavLink  to="/home" onClick={onClose}>Home</NavLink>
-            <NavLink  to="/about" onClick={onClose}>About me</NavLink>
-            <NavLink  to="/projects" onClick={onClose}>Projects</NavLink>
-            <NavLink  to="/contact" onClick={onClose}>Contact Me</NavLink>
+            <NavLink to="/home" onClick={onClose}>Home</NavLink>
+            <NavLink to="/about" onClick={onClose}>About me</NavLink>
+            <NavLink to="/projects" onClick={onClose}>Projects</NavLink>
+            <NavLink to="/contact" onClick={onClose}>Contact Me</NavLink>
           </Box>
         </DrawerContent>
       </Drawer>
@@ -93,3 +104,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
