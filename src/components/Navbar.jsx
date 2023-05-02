@@ -1,21 +1,10 @@
 import React from 'react';
-import {
-  Box,
-  Flex,
-  IconButton,
-  useColorMode,
-  useColorModeValue,
-  HStack,
-  useDisclosure,
-  Drawer,
-  DrawerOverlay,
-  DrawerContent,
-  DrawerCloseButton
-} from '@chakra-ui/react';
+import { Box, Flex, IconButton, useColorMode, useColorModeValue, HStack, useDisclosure, Drawer, DrawerOverlay, DrawerContent, DrawerCloseButton } from '@chakra-ui/react';
 import { HamburgerIcon, SunIcon, MoonIcon } from '@chakra-ui/icons';
 import { Link, useLocation } from 'react-router-dom';
-
 import { chakra } from '@chakra-ui/react';
+import { useBreakpointValue } from "@chakra-ui/react";
+
 const ChakraLink = chakra(Link);
 
 const NavLink = ({ children, to }) => {
@@ -49,6 +38,13 @@ const Navbar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { colorMode, toggleColorMode } = useColorMode();
   const isDarkMode = colorMode === 'dark';
+  const isMobileView = useBreakpointValue({ base: true, md: false });
+
+  const handleLinkClick = () => {
+    if (isMobileView) {
+      onClose();
+    }
+  };
 
   return (
     <Box>
@@ -92,16 +88,14 @@ const Navbar = () => {
         <DrawerContent bg={useColorModeValue("black", "gray.800")}>
           <DrawerCloseButton mt={2} />
           <Box mt={8} px={4}>
-            <NavLink to="/home" onClick={onClose}>Home</NavLink>
-            <NavLink to="/about" onClick={onClose}>About me</NavLink>
-            <NavLink to="/projects" onClick={onClose}>Projects</NavLink>
-            <NavLink to="/contact" onClick={onClose}>Contact Me</NavLink>
+            <NavLink to="/home" onClick={handleLinkClick}>Home</NavLink>
+            <NavLink to="/about" onClick={handleLinkClick}>About me</NavLink>
+            <NavLink to="/projects" onClick={handleLinkClick}>Projects</NavLink>
+            <NavLink to="/contact" onClick={handleLinkClick}>Contact Me</NavLink>
           </Box>
         </DrawerContent>
       </Drawer>
     </Box>
   );
 };
-
 export default Navbar;
-
