@@ -17,18 +17,23 @@ const DemonBreach = () => {
                 <Heading as="h2" size="md" mb={2} color={textColor}>
                     Game project for year 2 Game Development
                 </Heading>
-                <Image src="https://via.placeholder.com/500" alt="Project image" my={6} borderRadius="md"/>
+                <Image src="https://via.placeholder.com/500" alt="Project image" my={6} borderRadius="md" />
                 <Text fontSize="md" color={textColor}>
-                    This project was completed with 1 team member and was a 2D twin-stick, top down shooter game developed as part of my game development paper.<br></br><br></br>
+                    This project was completed with 1 team member and was a 2D twin-stick, top down shooter game developed as part of my IT610 - Game Development paper during my second year of study at Te-Pūkenga.<br></br><br></br>
                     This game was created in Unity using C#.
                 </Text>
-                <br></br><br></br>
+                <Heading as="h2" size="md" mb={2} color={textColor}>
+                    My role in the project
+                </Heading>
+                <Text>
+                    Main developer & Art designer
+                </Text>
+                <br></br>
                 <Button colorScheme="teal" onClick={() => navigate("/projects")}>
                     Go back to Projects
                 </Button>
             </Box>
         </PageTransition>
-
     );
 };
 

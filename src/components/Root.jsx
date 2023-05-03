@@ -8,6 +8,8 @@ import Projects from "./Projects";
 import Contact from "./ContactInfo";
 import ICLTaskManagement from "./projects/ICLTaskManagement";
 import DemonBreach from "./projects/DemonBreach";
+import DigimonApplication from './projects/DigimonApp';
+import QRAttendanceApp from './projects/QRAttendance';
 import { motion } from "framer-motion";
 
 const pageTransition = {
@@ -70,7 +72,23 @@ const Root = () => {
             </motion.div>
           }
         />
-        {/* Add other project components here as needed */}
+        <Route
+          path="/projects/digimonapp"
+          element={
+            <motion.div {...pageTransition}>
+              <DigimonApplication />
+            </motion.div>
+          }
+        />
+        <Route
+          path="/projects/qrattendance"
+          element={
+            <motion.div {...pageTransition}>
+              <QRAttendanceApp />
+            </motion.div>
+          }
+        />
+        {/* Extra projects go here */}
         <Route
           path="/contact"
           element={

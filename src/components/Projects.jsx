@@ -1,7 +1,5 @@
 import React from 'react';
-import {
-  Box, Grid, GridItem, Heading, Text, Image, Button, useBreakpointValue, Flex, useColorModeValue
-} from '@chakra-ui/react';
+import { Box, Grid, GridItem, Heading, Text, Image, Button, useBreakpointValue, Flex, useColorModeValue } from '@chakra-ui/react';
 import PageTransition from './PageTransition';
 import { Link } from 'react-router-dom';
 
@@ -10,15 +8,7 @@ const ProjectCard = ({ title, description, imageUrl, projectUrl }) => {
 
   return (
     <PageTransition>
-      <Box
-        borderWidth="1px"
-        borderRadius="lg"
-        p={4}
-        overflow="hidden"
-        bg={useBreakpointValue({ base: cardBgColor, md: cardBgColor })}
-        boxShadow="base"
-        height="100%"
-      >
+      <Box borderWidth="1px" borderRadius="lg" p={4} overflow="hidden" bg={useBreakpointValue({ base: cardBgColor, md: cardBgColor })} boxShadow="base" height="100%">
         <Flex flexDirection="column" justifyContent="space-between" h="100%" alignItems="flex-start">
           <Box>
             <Image src={imageUrl} alt={title} mb={4} />
@@ -28,10 +18,7 @@ const ProjectCard = ({ title, description, imageUrl, projectUrl }) => {
             <Text mb={4} minHeight="3.5em">{description}</Text>
           </Box>
           <Link to={projectUrl}>
-            <Button
-              colorScheme="teal"
-              maxWidth="80%"
-            >
+            <Button colorScheme="teal" maxWidth="80%">
               View Project
             </Button>
           </Link>

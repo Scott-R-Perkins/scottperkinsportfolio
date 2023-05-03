@@ -1,17 +1,7 @@
 import React, { useRef } from 'react';
 import {
-  Box,
-  VStack,
-  Heading,
-  Text,
-  FormControl,
-  FormLabel,
-  Input,
-  Textarea,
-  Button,
-  useToast,
-  Flex,
-  useBreakpointValue,
+  Box, VStack, Heading, Text, FormControl, FormLabel, Input, Textarea,
+  Button, useToast, Flex, useBreakpointValue
 } from '@chakra-ui/react';
 import PageTransition from './PageTransition';
 
@@ -49,9 +39,31 @@ const ContactMe = () => {
       return;
     }
 
-    // Handle the form submission here, probably just send to a discord webhook for now, or maybe look into sending it to one my old emails?
+    var discordMessage = {
+      username: 'Message notifier',
+      content: 'Message from a portfolio visitor',
+      embeds: [
+        {
+          fields: [
+            { name: 'Name', value: name },
+            { name: 'Phone', value: phone },
+            { name: 'Email', value: email },
+            { name: 'Message', value: message },
+          ],
+        },
+      ],
+    };
 
-    // Clear the input fields and display a success notification
+    fetch(process.env.REACT_APP_WEBHOOK_URL, {
+      body: JSON.stringify(discordMessage),
+      method: 'post',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+
+
+
     formRef.current.reset();
     toast({
       title: 'Success',
@@ -67,42 +79,42 @@ const ContactMe = () => {
   return (
     <PageTransition>
       <Box p={{ base: 4, md: 8 }}>
-      <Flex direction={flexDirection} w="100%" justifyContent="space-between">
-        {/* Contact Details */}
-        <VStack alignItems="start" flex="1">
-          <Heading mb={4}>Contact Details</Heading>
-          <Text>Email: scottrperkins@gmail.com</Text>
-          <Text>Email: 2013004474@student.sit.ac.nz</Text>
-          <Text>Phone: +64 27 869 0389</Text>
-        </VStack>
+        <Flex direction={flexDirection} w="100%" justifyContent="space-between">
+          {/* Contact Details */}
+          <VStack alignItems="start" flex="1">
+            <Heading mb={4}>Contact Details</Heading>
+            <Text>Email: scottrperkins@gmail.com</Text>
+            <Text>Email: 2013004474@student.sit.ac.nz</Text>
+            <Text>Phone: +64 27 869 0389</Text>
+          </VStack>
 
-        {/* Contact Form */}
-        <VStack as="form" onSubmit={handleSubmit} spacing={4} w="100%" flex="1" ref={formRef} mt={{ base: 8, md: 0 }}>
-          <Heading mb={4}>Get in touch with me</Heading>
-          <FormControl id="name">
-            <FormLabel>Name</FormLabel>
-            <Input type="text" name="name" />
-          </FormControl>
-          <FormControl id="phone">
-            <FormLabel>Phone</FormLabel>
-            <Input type="tel" name="phone" />
-          </FormControl>
-          <FormControl id="email">
-            <FormLabel>Email</FormLabel>
-            <Input type="email" name="email" />
-          </FormControl>
-          <FormControl id="message">
-            <FormLabel>Message</FormLabel>
-            <Textarea name="message" />
-          </FormControl>
-          <Button type="submit" colorScheme="teal">
-            Send Message
-          </Button>
-        </VStack>
-      </Flex>
-    </Box>
+          {/* Contact Form */}
+          <VStack as="form" onSubmit={handleSubmit} spacing={4} w="100%" flex="1" ref={formRef} mt={{ base: 8, md: 0 }}>
+            <Heading mb={4}>Get in touch with me</Heading>
+            <FormControl id="name">
+              <FormLabel>Name</FormLabel>
+              <Input type="text" name="name" />
+            </FormControl>
+            <FormControl id="phone">
+              <FormLabel>Phone</FormLabel>
+              <Input type="tel" name="phone" />
+            </FormControl>
+            <FormControl id="email">
+              <FormLabel>Email</FormLabel>
+              <Input type="email" name="email" />
+            </FormControl>
+            <FormControl id="message">
+              <FormLabel>Message</FormLabel>
+              <Textarea name="message" />
+            </FormControl>
+            <Button type="submit" colorScheme="teal">
+              Send Message
+            </Button>
+          </VStack>
+        </Flex>
+      </Box>
     </PageTransition>
-    
+
   );
 };
 

@@ -1,10 +1,25 @@
 Check all pages 
 Connect the contact form to either a discord webhook or maybe email
-Fix up the fromatting to make it consistent
+Fix up the formatting to make it consistent
 Find more images (Random stock type shit for about? maybe ICL logo for task management, and pic from game for DemonBreach)
 Documentation
 Check requirements and make sure I have everything
-Look into having the navmenu (hamburger) auto close when a link is clicked because atm it stays open on mobile
-explain my roles on the projects etc 
-add project pages for the digimon collection and attendance scanner
 maybe seperate the about page and skills, so that the about page is about+interests, then skills is a seperate page.
+Have a look at making all the cards on the projec page match the height of the largest card
+Link to GitHub somewhere, maybe icon up by the darkmode switcher or part of the nav? but put it on contact page too 
+Fix the link on the digimon tcg app page to properly link to the video
+images for all of the things
+
+
+https://www.npmjs.com/package/react-type-animation
+https://react-type-animation.netlify.app/examples
+Websites for messing around with the react typer
+
+Maybe have homepage display 
+Name
+I am a (react-typer-animation here to change between some stuff with colour switcher)
+button for projects
+
+move the other stuff to about page
+
+
