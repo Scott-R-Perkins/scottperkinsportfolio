@@ -1,7 +1,7 @@
 import React from 'react';
-import { Box, Heading, Text, Image, Button, useColorModeValue } from '@chakra-ui/react';
+import { Box, Heading, Text, Image, Button, useColorModeValue, Link as ChakraLink } from '@chakra-ui/react';
 import { ExternalLinkIcon } from '@chakra-ui/icons'
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import PageTransition from './../PageTransition';
 
 const DigimonApp = () => {
@@ -28,9 +28,10 @@ const DigimonApp = () => {
                     This project was developed as part of my IT601 - Project Management paper in my second year of study at Te-Pūkenga.<br></br><br></br>
                     The purpose of the project was to create a mobile application to aid collectors of the Digimon TCG in keeping track of cards they own and upcoming cards that have not been released yet that they might want to aquire.
                     <br></br><br></br>
-                    <Link href='https://www.youtube.com/watch?v=_ALeMNoVink' isExternal>
+                    <ChakraLink href='https://www.youtube.com/watch?v=_ALeMNoVink' isExternal>
                         This video provides a demonstration of the application<ExternalLinkIcon mx='2px' />
-                    </Link>
+                    </ChakraLink>
+
                 </Text>
                 <br></br>
                 <Heading as="h2" size="md" mb={2} color={textColor}>
