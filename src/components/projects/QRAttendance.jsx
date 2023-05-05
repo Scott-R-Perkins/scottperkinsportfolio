@@ -25,13 +25,8 @@ const QRAttendance = () => {
           <Heading as="h2" size="md" mb={2} color={textColor}>
             Mobile application for tracking attendance via QR codes.
           </Heading>
-          <Image
-            src={QRAttendanceLogo}
-            alt="Project image"
-            my={6}
-            borderRadius="md"
-            width={{ base: "100%", sm: "500px" }} height={{ base: "auto", sm: "500px" }} objectFit="cover"
-          />
+          <Image src={QRAttendanceLogo} alt="Project image" my={6} borderRadius="md" width={{ base: "100%", sm: "500px" }} 
+          height={{ base: "auto", sm: "500px" }} objectFit="cover"/>
           <Text fontSize="md" color={textColor}>
             This project was developed as part of my IT721 - Software
             Engineering paper in my third year of study at Te-Pūkenga.

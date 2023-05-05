@@ -9,13 +9,7 @@ const DemonBreach = () => {
   const navigate = useNavigate();
   const bgColor = useColorModeValue('gray.100', 'gray.700');
   const textColor = useColorModeValue('gray.800', 'gray.200');
-  const linkStyle = {
-    textDecoration: 'underline', // Add an underline to the link
-    color: 'teal.500', // Change the link color
-    _hover: {
-      textDecoration: 'none', // Remove the underline on hover
-      color: 'teal.700', // Change the link color on hover
-    },
+  const linkStyle = { textDecoration: 'underline', color: 'teal.500', _hover: { textDecoration: 'none', color: 'teal.700',},
   };
 
   return (
@@ -28,13 +22,8 @@ const DemonBreach = () => {
           <Heading as="h2" size="md" mb={2} color={textColor}>
             Game project for year 2 Game Development
           </Heading>
-          <Image
-            src={DemonBreachLogo}
-            alt="Project image"
-            my={6}
-            borderRadius="md"
-            width={{ base: "100%", sm: "500px" }} height={{ base: "auto", sm: "500px" }} objectFit="cover"
-          />
+          <Image src={DemonBreachLogo} alt="Project image" my={6} borderRadius="md" width={{ base: "100%", sm: "500px" }} 
+          height={{ base: "auto", sm: "500px" }} objectFit="cover" />
           <Text fontSize="md" color={textColor}>
             This project was completed with 1 team member and was a 2D
             twin-stick, top down shooter game developed as part of my IT610 -

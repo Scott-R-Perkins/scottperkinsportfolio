@@ -70,14 +70,7 @@ const Projects = () => {
       <Heading as="h2" mb={8} textAlign="center">
         My Projects
       </Heading>
-      <Grid
-        templateColumns={{
-          base: 'repeat(1, 1fr)',
-          sm: 'repeat(2, 1fr)',
-          md: 'repeat(3, 1fr)',
-        }}
-        gap={8}
-      >
+      <Grid templateColumns={{ base: 'repeat(1, 1fr)', sm: 'repeat(2, 1fr)', md: 'repeat(3, 1fr)',}} gap={8}>
         {projects.map((project, index) => (
           <GridItem key={index}>
             <ProjectCard {...project} />

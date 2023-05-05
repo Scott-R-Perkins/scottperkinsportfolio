@@ -11,13 +11,7 @@ const ICLTaskManagement = () => {
 
   return (
     <PageTransition>
-      <Box
-        mx={{ base: '1rem', md: '3rem' }}
-        my={{ base: '2rem', md: '4rem' }}
-        p={{ base: '2rem', md: '4rem' }}
-        borderRadius="md"
-        bgColor={bgColor}
-      >
+      <Box mx={{ base: '1rem', md: '3rem' }} my={{ base: '2rem', md: '4rem' }} p={{ base: '2rem', md: '4rem' }} borderRadius="md" bgColor={bgColor}>
         <VStack spacing={6} alignItems="start">
           <Heading as="h1" size="2xl" mb={4} color={textColor}>
             ICL Task Management application
