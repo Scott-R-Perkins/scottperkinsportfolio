@@ -24,19 +24,13 @@ const AboutMe = () => {
                 About Me
               </Heading>
               <Text color={textColor}>
-                Hi, I'm Scott Perkins, a Bachelor of Information Technology
-                student currently in my 3rd year at Te-Pūkenga, Invercargill. I
-                have a passion for creating beautiful, responsive, and functional
-                web applications, With experience in various programming
-                languages and frameworks. <br></br><br></br>
-                I have experience in multiple technologies and am always looking to learn more about the ones I know, and about ones I don't.<br></br><br></br>
-                I enjoy the challenge that comes
-                with learning these technologies and the feeling that comes with
-                something finally working and looking the way I want it to.
+                Hi, I'm Scott Perkins, a Bachelor of Information Technology student currently in my 3rd year at Te-Pūkenga, Invercargill. I have a passion for creating beautiful, responsive, and functional web applications, with experience in various programming languages and frameworks. <br></br><br></br>
+                I have experience in multiple technologies and am always eager to learn more about the ones I know and discover new ones. <br></br><br></br>
+                I enjoy the challenge that comes with learning these technologies and the satisfaction of seeing something finally working and looking the way I want it to.
               </Text>
             </VStack>
             <Spacer />
-            <Image src={aboutMeImage} alt="About Me" borderRadius="md" width={{ base: "100%", sm: "400px" }} height={{ base: "auto", sm: "400px" }} objectFit="cover"/>
+            <Image src={aboutMeImage} alt="About Me" borderRadius="md" width={{ base: "100%", sm: "400px" }} height={{ base: "auto", sm: "400px" }} objectFit="cover" />
           </Stack>
 
           {/* Skills */}
@@ -46,7 +40,10 @@ const AboutMe = () => {
                 Skills
               </Heading>
               <Text color={textColor}>
-                I have some
+                As a passionate and driven software developer, I have gained proficiency in a range of programming languages and technologies including C#, Java, HTML, CSS, JavaScript, MySQL, and Jade database. <br></br><br></br>
+                My diverse skill set allows me to tackle a variety of projects with confidence and creativity.<br></br><br></br>
+                I am currently expanding my expertise by learning React for front-end web development and Java for Android app development.<br></br><br></br>
+                With a commitment to continuous learning and a strong foundation in programming, I strive to deliver high-quality solutions that meet the needs of users and clients alike.
               </Text>
             </VStack>
             <Spacer />
@@ -59,15 +56,15 @@ const AboutMe = () => {
                 Interests
               </Heading>
               <Text color={textColor}>
-                Outside of IT, some of my interests include going on hikes, roadtrips, or just generally exploring outside with my partner.<br></br><br></br> 
-                Playing games with my friends, both online and offline (dabbling into things like Magic the Gathering, D&D 5e and plenty of boardgames).<br></br><br></br> 
-                Watching movies and TV shows.<br></br><br></br> 
-                When I find the time I also like to go snowboarding.<br></br><br></br> 
-                Animals, particularly dogs.
+                Outside of IT, some of my interests include going on hikes, road trips, or just generally exploring outside with my partner.<br></br><br></br>
+                Playing games with my friends, both online and offline (dabbling in activities like Magic the Gathering, D&D 5e, and plenty of board games).<br></br><br></br>
+                Watching movies and TV shows.<br></br><br></br>
+                When I find the time, I also like to go snowboarding.<br></br><br></br>
+                I have a strong affinity for animals, particularly dogs.
               </Text>
             </VStack>
             <Spacer />
-            <Image src={interestsImage} alt="Interests" borderRadius="md" width={{ base: "100%", sm: "400px" }} height={{ base: "auto", sm: "400px" }} objectFit="cover"/>
+            <Image src={interestsImage} alt="Interests" borderRadius="md" width={{ base: "100%", sm: "400px" }} height={{ base: "auto", sm: "400px" }} objectFit="cover" />
           </Stack>
         </VStack>
       </Box>
