@@ -6,26 +6,25 @@ import faceImage from './../images/face.jpg';
 import PageTransition from './PageTransition';
 import { TypeAnimation } from 'react-type-animation';
 
-
 const HomePage = () => {
   const imageSize = useBreakpointValue({ base: '250px', md: '400px' });
   const [textColor, setTextColor] = useState('black');
+  const headingColor = useColorModeValue('gray.900', 'white');
+  const textColorLight = useColorModeValue('gray.800', 'gray.200');
 
   return (
     <PageTransition>
       <Box>
         <Flex direction={{ base: 'column', md: 'row' }} alignItems="center" justifyContent="space-between" minHeight="70vh" backgroundImage={bgImage} backgroundPosition="center"
           backgroundRepeat="no-repeat" backgroundSize="cover" py={16} px={{ base: 4, md: 12 }}>
-          <VStack spacing={4} alignItems="start" maxW="md" bgColor={useColorModeValue('white', 'gray.700')} borderRadius={"15%"} padding={"8"}> {/*Move this over slightly, and try and put a box around it so its visable with the bg image */}
-            <Heading color={useColorModeValue('black', 'white')} mb={2}>
+          <VStack spacing={4} alignItems="start" maxW="md" bgColor={useColorModeValue('white', 'gray.700')} borderRadius={"15%"} padding={"8"}>
+            <Heading color={headingColor} mb={2} fontSize="3xl">
               Scott Perkins
             </Heading>
             <>
               <div
                 style={{
                   fontSize: '25px', color: textColor, whiteSpace: 'pre-line'
-                  /* when working without ref and classNames, the manipulated style needs to be
-                   applied to the parent element, because the TypeAnimation component is perma-memoized */
                 }}>
                 <TypeAnimation
                   sequence={[
@@ -44,10 +43,10 @@ const HomePage = () => {
                 />
               </div>
             </>
-            <Text fontSize="lg" fontWeight="semibold" color={useColorModeValue('black', 'white')}>
+            <Text fontSize="xl" fontWeight="semibold" color={headingColor}>
               IT Student  & aspiring Software Developer
             </Text>
-            <Text fontSize="md" color={useColorModeValue('black', 'white')}>
+            <Text fontSize="md" color={textColorLight}>
               I'm an IT student with an interest in developing useful and efficient software applications, websites, and mobile applications.
               <br></br>
               <br></br>

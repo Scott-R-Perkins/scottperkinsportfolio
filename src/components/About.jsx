@@ -1,10 +1,13 @@
 import React from 'react';
 import { Box, Heading, Text, VStack, Image, useBreakpointValue, useColorModeValue, Stack, Spacer } from '@chakra-ui/react';
 import PageTransition from './PageTransition';
+import aboutMeImage from './../images/aboutPageWithMel.jpg';
+import interestsImage from './../images/lookoutPic.jpg';
+import skillsImage from './../images/skills.png';
 
 const AboutMe = () => {
-  const textColor = useColorModeValue('black', 'white');
-  const headingColor = useColorModeValue('black', 'white');
+  const textColor = useColorModeValue('gray.800', 'gray.200');
+  const headingColor = useColorModeValue('gray.900', 'white');
   const bgColor = useColorModeValue('white', 'gray.700');
   const rowBgColor1 = useColorModeValue('gray.100', 'gray.800');
   const rowBgColor2 = useColorModeValue('white', 'gray.700');
@@ -17,7 +20,7 @@ const AboutMe = () => {
           {/* About Me */}
           <Stack bg={rowBgColor1} p={4} borderRadius="md" spacing={4} w="100%" alignItems="flex-start" direction={stackDirection}>
             <VStack alignItems="start" flex="1" spacing={10}>
-              <Heading mb={1} color={headingColor}>
+              <Heading mb={1} color={headingColor} fontSize="3xl">
                 About Me
               </Heading>
               <Text color={textColor}>
@@ -26,21 +29,20 @@ const AboutMe = () => {
                 have a passion for creating beautiful, responsive, and functional
                 web applications, With experience in various programming
                 languages and frameworks. <br></br><br></br>
-                Most of my experience is with C#, Javascript,
-                React and <i>some</i> chakra-ui, but I also have experience in other tools such as mySQL, Jade, Project management and more.<br></br><br></br>
+                I have experience in multiple technologies and am always looking to learn more about the ones I know, and about ones I don't.<br></br><br></br>
                 I enjoy the challenge that comes
                 with learning these technologies and the feeling that comes with
                 something finally working and looking the way I want it to.
               </Text>
             </VStack>
             <Spacer />
-            <Image src="https://via.placeholder.com/300" alt="About Me" borderRadius="md" />
+            <Image src={aboutMeImage} alt="About Me" borderRadius="md" width={{ base: "100%", sm: "400px" }} height={{ base: "auto", sm: "400px" }} objectFit="cover"/>
           </Stack>
 
           {/* Skills */}
           <Stack bg={rowBgColor2} p={4} borderRadius="md" spacing={4} w="100%" alignItems="flex-start" direction={stackDirection}>
             <VStack alignItems="start" flex="1" spacing={10}>
-              <Heading mb={1} color={headingColor}>
+              <Heading mb={1} color={headingColor} fontSize="3xl">
                 Skills
               </Heading>
               <Text color={textColor}>
@@ -48,21 +50,24 @@ const AboutMe = () => {
               </Text>
             </VStack>
             <Spacer />
-            <Image src="https://via.placeholder.com/300" alt="Skills" borderRadius="md" />
+            <Image src={skillsImage} alt="Skills" borderRadius="md" width={{ base: "100%", sm: "400px" }} height={{ base: "auto", sm: "400px" }} objectFit="cover" />
           </Stack>
-
           {/* Interests */}
           <Stack bg={rowBgColor1} p={4} borderRadius="md" spacing={4} w="100%" alignItems="flex-start" direction={stackDirection}>
             <VStack alignItems="start" flex="1" spacing={10}>
-              <Heading mb={1} color={headingColor}>
+              <Heading mb={1} color={headingColor} fontSize="3xl">
                 Interests
               </Heading>
               <Text color={textColor}>
-                I have some
+                Outside of IT, some of my interests include going on hikes, roadtrips, or just generally exploring outside with my partner.<br></br><br></br> 
+                Playing games with my friends, both online and offline (dabbling into things like Magic the Gathering, D&D 5e and plenty of boardgames).<br></br><br></br> 
+                Watching movies and TV shows.<br></br><br></br> 
+                When I find the time I also like to go snowboarding.<br></br><br></br> 
+                Animals, particularly dogs.
               </Text>
             </VStack>
             <Spacer />
-            <Image src="https://via.placeholder.com/300" alt="Interests" borderRadius="md" />
+            <Image src={interestsImage} alt="Interests" borderRadius="md" width={{ base: "100%", sm: "400px" }} height={{ base: "auto", sm: "400px" }} objectFit="cover"/>
           </Stack>
         </VStack>
       </Box>

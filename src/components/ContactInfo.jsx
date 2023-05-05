@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import {
   Box, VStack, Heading, Text, FormControl, FormLabel, Input, Textarea,
-  Button, useToast, Flex, useBreakpointValue
+  Button, useToast, Flex, useBreakpointValue, useColorModeValue
 } from '@chakra-ui/react';
 import PageTransition from './PageTransition';
 
@@ -75,6 +75,8 @@ const ContactMe = () => {
   };
 
   const flexDirection = useBreakpointValue({ base: 'column', md: 'row' });
+  const textColor = useColorModeValue('black', 'white');
+  const headingColor = useColorModeValue('black', 'white');
 
   return (
     <PageTransition>
@@ -82,29 +84,28 @@ const ContactMe = () => {
         <Flex direction={flexDirection} w="100%" justifyContent="space-between">
           {/* Contact Details */}
           <VStack alignItems="start" flex="1">
-            <Heading mb={4}>Contact Details</Heading>
-            <Text>Email: scottrperkins@gmail.com</Text>
-            <Text>Email: 2013004474@student.sit.ac.nz</Text>
-            <Text>Phone: +64 27 869 0389</Text>
+            <Heading mb={4} color={headingColor} fontSize="3xl">Contact Details</Heading>
+            <Text color={textColor}>Email: scottrperkins@gmail.com</Text>
+            <Text color={textColor}>Phone: +64 27 869 0389</Text>
           </VStack>
 
           {/* Contact Form */}
           <VStack as="form" onSubmit={handleSubmit} spacing={4} w="100%" flex="1" ref={formRef} mt={{ base: 8, md: 0 }}>
-            <Heading mb={4}>Get in touch with me</Heading>
+            <Heading mb={4} color={headingColor} fontSize="3xl">Get in touch with me</Heading>
             <FormControl id="name">
-              <FormLabel>Name</FormLabel>
+              <FormLabel color={textColor}>Name</FormLabel>
               <Input type="text" name="name" />
             </FormControl>
             <FormControl id="phone">
-              <FormLabel>Phone</FormLabel>
+              <FormLabel color={textColor}>Phone</FormLabel>
               <Input type="tel" name="phone" />
             </FormControl>
             <FormControl id="email">
-              <FormLabel>Email</FormLabel>
+              <FormLabel color={textColor}>Email</FormLabel>
               <Input type="email" name="email" />
             </FormControl>
             <FormControl id="message">
-              <FormLabel>Message</FormLabel>
+              <FormLabel color={textColor}>Message</FormLabel>
               <Textarea name="message" />
             </FormControl>
             <Button type="submit" colorScheme="teal">

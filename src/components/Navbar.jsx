@@ -1,9 +1,10 @@
 import React from 'react';
-import { Box, Flex, IconButton, useColorMode, useColorModeValue, HStack, useDisclosure, Drawer, DrawerOverlay, DrawerContent, DrawerCloseButton } from '@chakra-ui/react';
+import { Box, Flex, IconButton, useColorMode, useColorModeValue, HStack, useDisclosure, Drawer, DrawerOverlay, DrawerContent, DrawerCloseButton, Link as ExternalLink } from '@chakra-ui/react';
 import { HamburgerIcon, SunIcon, MoonIcon } from '@chakra-ui/icons';
 import { Link, useLocation } from 'react-router-dom';
 import { chakra } from '@chakra-ui/react';
 import { useBreakpointValue } from "@chakra-ui/react";
+import { FaGithub } from 'react-icons/fa';
 
 const ChakraLink = chakra(Link);
 
@@ -14,20 +15,42 @@ const NavLink = ({ children, to, onClick }) => {
   const linkColor = useColorModeValue('gray.200', 'gray.200');
   const hoverColor = useColorModeValue('teal.500', 'teal.300');
 
+
+
   return (
     <ChakraLink display={{ base: 'block', md: 'inline' }} mb={{ base: 2, md: 0 }} to={to} px={4} py={2} fontSize="lg" fontWeight={isActive ? 'semibold' : 'normal'}
-      color={isActive ? activeColor : linkColor} _hover={{textDecoration: 'underline', color: hoverColor, }}
+      color={isActive ? activeColor : linkColor} _hover={{ textDecoration: 'underline', color: hoverColor, }}
       onClick={onClick}>
       {children}
     </ChakraLink>
   );
+
+}; 
+const GithubLink = ({ children, href, onClick }) => {
+  const location = useLocation();
+  const isActive = location.pathname === href;
+  const activeColor = useColorModeValue('teal.500', 'teal.300');
+  const linkColor = useColorModeValue('gray.200', 'gray.200');
+  const hoverColor = useColorModeValue('teal.500', 'teal.300');
+
+  return (
+    <ExternalLink display={{ base: 'block', md: 'inline' }} mb={{ base: 2, md: 0 }} href={href} px={4} py={2} fontSize="lg" fontWeight={isActive ? 'semibold' : 'normal'}
+      color={isActive ? activeColor : linkColor} _hover={{ textDecoration: 'underline', color: hoverColor, }}
+      onClick={onClick} isExternal>
+      {children}
+    </ExternalLink>
+  );
 };
+
+
+
 
 const Navbar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { colorMode, toggleColorMode } = useColorMode();
   const isDarkMode = colorMode === 'dark';
   const isMobileView = useBreakpointValue({ base: true, md: false });
+  const githubIconColor = useColorModeValue('white', 'gray.200');
 
   const handleLinkClick = () => {
     if (isMobileView) {
@@ -35,18 +58,26 @@ const Navbar = () => {
     }
   };
 
+
   return (
     <Box position="sticky" top="0" zIndex="10" width="100%">
       <Flex as="header" justifyContent="space-between" alignItems="center" px={{ base: 4, md: 8 }} py={4} bg={useColorModeValue('white', 'gray.800')}
         bgColor={"black"} borderBottomWidth="1px" borderBottomColor={useColorModeValue('gray.200', 'gray.700')}
-        
-        >
-        <IconButton display={{ base: 'flex', md: 'none' }} aria-label="Toggle menu" icon={<HamburgerIcon />} onClick={onOpen} color={useColorModeValue("black", "white")}/>
+
+      >
+        <IconButton display={{ base: 'flex', md: 'none' }} aria-label="Toggle menu" icon={<HamburgerIcon />} onClick={onOpen} color={useColorModeValue("black", "white")} />
         <HStack spacing={8} display={{ base: 'none', md: 'flex' }}>
           <NavLink to="/home">Home</NavLink>
           <NavLink to="/about">About me</NavLink>
           <NavLink to="/projects">Projects</NavLink>
           <NavLink to="/contact">Contact me</NavLink>
+
+          <GithubLink href="https://github.com/Scott-R-Perkins">
+            <HStack spacing={2}>
+              <Box as="span">My Github</Box>
+              <FaGithub color={githubIconColor} />
+            </HStack>
+          </GithubLink>
         </HStack>
 
         <IconButton
